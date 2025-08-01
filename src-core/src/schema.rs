@@ -187,6 +187,36 @@ diesel::joinable!(goals_allocation -> accounts (account_id));
 diesel::joinable!(goals_allocation -> goals (goal_id));
 diesel::joinable!(quotes -> assets (symbol));
 
+diesel::table! {
+    plaid_connections (id) {
+        id -> Text,
+        access_token -> Text,
+        item_id -> Text,
+        institution_id -> Text,
+        institution_name -> Text,
+        created_at -> Timestamp,
+        updated_at -> Timestamp,
+    }
+}
+
+diesel::table! {
+    plaid_accounts (id) {
+        id -> Text,
+        connection_id -> Text,
+        account_id -> Text,
+        account_name -> Text,
+        account_type -> Text,
+        account_subtype -> Nullable<Text>,
+        currency -> Text,
+        current_balance -> Double,
+        available_balance -> Nullable<Double>,
+        created_at -> Timestamp,
+        updated_at -> Timestamp,
+    }
+}
+
+diesel::joinable!(plaid_accounts -> plaid_connections (connection_id));
+
 diesel::allow_tables_to_appear_in_same_query!(
     accounts,
     activities,
@@ -201,4 +231,6 @@ diesel::allow_tables_to_appear_in_same_query!(
     market_data_providers,
     platforms,
     quotes,
+    plaid_connections,
+    plaid_accounts,
 );

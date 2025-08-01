@@ -33,6 +33,11 @@ const navigation: NavigationProps = {
       href: '/activities',
     },
     {
+      icon: <Icons.Zap className="h-5 w-5" />,
+      title: 'Integrations',
+      href: '/integrations',
+    },
+    {
       icon: <Icons.Settings className="h-5 w-5" />,
       title: 'Settings',
       href: '/settings/general',

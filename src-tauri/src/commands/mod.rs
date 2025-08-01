@@ -10,3 +10,5 @@ pub mod utilities;
 pub mod secrets;
 pub mod providers_settings;
 pub mod error;
+pub mod plaid;
+pub mod llm;

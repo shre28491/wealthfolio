@@ -143,6 +143,17 @@ pub fn main() {
             commands::secrets::delete_api_key,
             commands::providers_settings::get_market_data_providers_settings,
             commands::providers_settings::update_market_data_provider_settings,
+            // Plaid commands
+            commands::plaid::create_plaid_link_token,
+            commands::plaid::exchange_plaid_public_token,
+            commands::plaid::get_plaid_connections,
+            commands::plaid::get_plaid_accounts,
+            commands::plaid::sync_plaid_accounts,
+            commands::plaid::sync_plaid_transactions,
+            commands::plaid::remove_plaid_connection,
+            // LLM commands
+            commands::llm::query_financial_assistant,
+            commands::llm::generate_financial_insights,
         ])
         .build(tauri::generate_context!())
         .expect("error while running wealthfolio application");

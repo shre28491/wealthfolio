@@ -10,8 +10,6 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
 diesel = { version = "2.2", features = ["sqlite", "chrono", "r2d2", "numeric", "returning_clauses_for_sqlite_3_35"] }
 chrono = { version = "0.4", features = ["serde"] }
 uuid = { version = "1.10", features = ["v4"] }
@@ -19,10 +17,12 @@ rusqlite = { version = "0.34", features = ["bundled"] }
 csv = "1.3"
 yahoo_finance_api = "4.0"
 regex = "1.10"
-reqwest = { version = "0.12", features = ["json", "cookies" ] }
+reqwest = { version = "0.12", features = ["json", "cookies"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
 thiserror = "1.0"
 lazy_static = "1.5"
-diesel_migrations = { version = "2.2", features = ["sqlite" ] }
+diesel_migrations = { version = "2.2", features = ["sqlite"] }
 r2d2 = "0.8"
 dashmap = "6.1"
 async-trait = "0.1"
@@ -34,5 +34,10 @@ futures = "0.3"
 serde_with = "3.4"
 tokio = { version = "1", features = ["macros", "rt-multi-thread", "sync"] }
 keyring = "2"
+# Plaid integration dependencies
+plaid = "3.4.0"
+# LLM integration dependencies
+async-openai = "0.25.0"
+tiktoken-rs = "0.6.0"
 
 [dev-dependencies]

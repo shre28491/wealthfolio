@@ -20,6 +20,7 @@ import ExportSettingsPage from './pages/settings/exports/exports-page';
 import ContributionLimitPage from './pages/settings/contribution-limits/contribution-limits-page';
 import PerformancePage from '@/pages/performance/performance-page';
 import MarketDataSettingsPage from './pages/settings/market-data-settings';
+import IntegrationsPage from '@/pages/integrations';
 
 export function AppRoutes() {
   useGlobalEventListener();
@@ -37,6 +38,7 @@ export function AppRoutes() {
           <Route path="onboarding" element={<OnboardingPage />} />;
           <Route path="income" element={<IncomePage />} />
           <Route path="performance" element={<PerformancePage />} />
+          <Route path="integrations" element={<IntegrationsPage />} />
           <Route path="settings" element={<SettingsLayout />}>
             <Route index element={<GeneralSettingsPage />} />
             <Route path="general" element={<GeneralSettingsPage />} />
